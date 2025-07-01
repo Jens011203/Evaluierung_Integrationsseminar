@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{curl \PYGZhy{}\PYGZhy{}request POST \PYGZbs{}}
+\PYG{x}{  \PYGZhy{}\PYGZhy{}url http://localhost:9192/api/management/v2/contractnegotiations \PYGZbs{}}
+\PYG{x}{  \PYGZhy{}\PYGZhy{}header \PYGZsq{}Content\PYGZhy{}Type: application/json\PYGZsq{} \PYGZbs{}}
+\PYG{x}{  \PYGZhy{}\PYGZhy{}header \PYGZsq{}User\PYGZhy{}Agent: insomnia/8.1.0\PYGZsq{} \PYGZbs{}}
+\PYG{x}{  \PYGZhy{}\PYGZhy{}header \PYGZsq{}x\PYGZhy{}api\PYGZhy{}key: ApiKeyDefaultValue\PYGZsq{} \PYGZbs{}}
+\PYG{x}{  \PYGZhy{}\PYGZhy{}data \PYGZsq{}\PYGZob{} \PYGZdq{}@context\PYGZdq{}: \PYGZob{}}
+\PYG{x}{    \PYGZdq{}edc\PYGZdq{}: \PYGZdq{}https://w3id.org/edc/v0.0.1/ns/\PYGZdq{},}
+\PYG{x}{		\PYGZdq{}odrl\PYGZdq{}: \PYGZdq{}http://www.w3.org/ns/odrl/2/\PYGZdq{}}
+\PYG{x}{  \PYGZcb{},}
+\PYG{x}{  \PYGZdq{}@type\PYGZdq{}: \PYGZdq{}NegotiationInitiateRequestDto\PYGZdq{},}
+\PYG{x}{  \PYGZdq{}connectorId\PYGZdq{}: \PYGZdq{}PROVIDER\PYGZdq{},}
+\PYG{x}{  \PYGZdq{}connectorAddress\PYGZdq{}: \PYGZdq{}http://company1:8282/api/dsp\PYGZdq{},}
+\PYG{x}{  \PYGZdq{}consumerId\PYGZdq{}: \PYGZdq{}CONSUMER\PYGZdq{},}
+\PYG{x}{ 	\PYGZdq{}providerId\PYGZdq{}: \PYGZdq{}PROVIDER\PYGZdq{},}
+\PYG{x}{  \PYGZdq{}protocol\PYGZdq{}: \PYGZdq{}dataspace\PYGZhy{}protocol\PYGZhy{}http\PYGZdq{},}
+\PYG{x}{  \PYGZdq{}offer\PYGZdq{}: \PYGZob{}}
+\PYG{x}{   \PYGZdq{}offerId\PYGZdq{}: \PYGZdq{}Offer\PYGZhy{}Id des Assets\PYGZdq{},}
+\PYG{x}{   \PYGZdq{}assetId\PYGZdq{}: \PYGZdq{}1MbData\PYGZdq{},}
+\PYG{x}{   \PYGZdq{}policy\PYGZdq{}: \PYGZob{}}
+\PYG{x}{     \PYGZdq{}@id\PYGZdq{}: \PYGZdq{}Offer\PYGZhy{}Id des Assets\PYGZdq{},}
+\PYG{x}{     \PYGZdq{}@type\PYGZdq{}: \PYGZdq{}Set\PYGZdq{},}
+\PYG{x}{     \PYGZdq{}odrl:permission\PYGZdq{}: [],}
+\PYG{x}{     \PYGZdq{}odrl:prohibition\PYGZdq{}: [],}
+\PYG{x}{     \PYGZdq{}odrl:obligation\PYGZdq{}: [],}
+\PYG{x}{     \PYGZdq{}odrl:target\PYGZdq{}: \PYGZdq{}1MbData\PYGZdq{}}
+\PYG{x}{   \PYGZcb{}}
+\PYG{x}{  \PYGZcb{}}
+\PYG{x}{\PYGZcb{}\PYGZsq{}	}
+\end{Verbatim}

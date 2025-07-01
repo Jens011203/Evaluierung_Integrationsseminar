@@ -1,0 +1,98 @@
+\chapter{Regression}
+Regression bezeichnet Algorithmen im Bereich des \emph{supervised Learnings},
+welche kardinal skalierte Zielwerte \(y\) vorhersagen. Ziel
+ist, auf Basis eines Trainingsdatensatzes mit Eingabevektoren \(\mathbf{x}_i\)
+und zugehörigen Messwerten \(y_i\) ein Modell zu erlernen, das für neue
+Datenpunkte möglichst geringe Abweichungen \(\hat y_i - y_i\) erzielt. Anders
+als bei der Klassifikation interessiert hier nicht die korrekte
+Kategorisierung, sondern die Minimierung des Vorhersagefehlers (vgl. \cite{Miller2024}). 
+Ein komplexeres Beispiel im verlinkten GitHub-Repository trainiert und evaluiert zwei einfachere Regression-Algorithmen 
+anhand eines Diabetes-Datensatzes.
+
+Im Folgenden werden die gebräuchlichsten Fehlermaße vorgestellt.
+
+\section{\acs{MSE} und \acs{RMSE}}
+
+Der \ac{MSE} ist definiert als 
+\[
+  \mathrm{MSE} = \frac{1}{N}\sum_{i=1}^N (\hat y_i - y_i)^2,
+\]
+der \ac{RMSE} als
+\[
+  \mathrm{RMSE} = \sqrt{\mathrm{MSE}}.
+\]
+Beide Metriken messen den durchschnittlichen quadratischen Fehler und sind in der Einheit von \(y\) (\ac{RMSE}) bzw. im Quadrat davon (\ac{MSE}).
+Folglich deuten niedrigere Werte auf eine bessere Regression hin.
+
+\paragraph{Beispiel:}  
+Angenommen, wir haben \(N=3\) Testwerte mit  
+\((y_1,y_2,y_3) = (2,\,5,\,7)\) und Vorhersagen \((\hat y_1,\hat y_2,\hat y_3) = (3,\,4,\,10)\).  
+Dann rechnen wir:
+\[
+  (\hat y_1 - y_1)^2 = (3-2)^2 = 1,\quad
+  (\hat y_2 - y_2)^2 = (4-5)^2 = 1,\quad
+  (\hat y_3 - y_3)^2 = (10-7)^2 = 9.
+\]
+Somit ist
+\[
+  \mathrm{MSE} = \frac{1 + 1 + 9}{3} = \frac{11}{3} \approx 3{,}67,
+  \quad
+  \mathrm{RMSE} = \sqrt{3{,}67} \approx 1{,}92.
+\]
+Somit liegt der Fehler der Vorhersagen bei etwa 1,92 Einheiten.
+
+\paragraph{Kritische Einordnung}
+\ac{MSE}/\ac{RMSE} bestrafen größere Fehler stärker (Quadrierung) und sind leicht zu optimieren, reagieren jedoch empfindlich auf Ausreißer (vgl. \cite{hodson2022root}).
+
+\section{\ac{MAE}}
+
+Der \ac{MAE} ist definiert als
+\[
+  \mathrm{MAE} = \frac{1}{N}\sum_{i=1}^N \bigl|\hat y_i - y_i\bigr|.
+\]
+Er misst den durchschnittlichen absoluten Fehler in derselben Einheit wie \(y\). Somit deuten auch hier niedrigere Werte auf eine bessere Regression hin.
+
+\paragraph{Beispiel:}  
+Mit den gleichen Werten \((y_i) = (2,5,7)\) und \((\hat y_i) = (3,4,10)\) erhalten wir:
+\[
+  |3-2| = 1,\quad |4-5| = 1,\quad |10-7| = 3,
+\]
+\[
+  \mathrm{MAE} = \frac{1 + 1 + 3}{3} = \frac{5}{3} \approx 1{,}67.
+\]
+Somit weichen die Vorhersagen um etwa \(1{,}67\) von den Vorhersagen ab.
+
+\paragraph{Kritische Einordnung}
+\ac{MAE} ist einfacher zu interpretieren und robuster gegenüber Ausreißern, gewichtet aber alle Fehler linear (vgl. \cite{hodson2022root}).
+
+\section{\(R^2\) (Bestimmtheitsmaß)}
+
+Das Bestimmtheitsmaß \(R^2\) gibt an, welcher Anteil der Varianz der Zielwerte durch das Modell erklärt wird:
+\[
+  R^2 = 1 - \frac{\sum_{i=1}^N (\hat y_i - y_i)^2}{\sum_{i=1}^N (y_i - \bar y)^2},
+  \quad
+  \bar y = \frac{1}{N}\sum_{i=1}^N y_i.
+\]
+Die Werte liegen zwischen \(-\infty\) und \(1\).\\
+
+\paragraph{Beispiel:}  
+Für unsere Werte \((y_i) = (2,5,7)\) ist der Mittelwert 
+\(\bar y = \tfrac{2+5+7}{3} = 14/3 \approx 4{,}67.\)  
+Berechne die Quadratsummen:
+\[
+  \sum(\hat y_i - y_i)^2 = 1 + 1 + 9 = 11,
+  \quad
+  \sum(y_i - \bar y)^2 
+    = (2-4{,}67)^2 + (5-4{,}67)^2 + (7-4{,}67)^2
+    \approx 7{,}11 + 0{,}11 + 5{,}44 = 12{,}67.
+\]
+Damit
+\[
+  R^2 = 1 - \frac{11}{12{,}67} \approx 1 - 0{,}87 = 0{,}13.
+\]
+Das Modell erklärt hier etwa 13\,\% der Gesamtvarianz.
+
+\paragraph{Kritische Einordnung}
+\(R^2\) ist anschaulich und modellunabhängig, kann jedoch durch Ausreißer oder
+sehr homogene Daten verzerrt sein und steigt mit zunehmender Modellkomplexität
+(vgl. \cite{Miller2024}).

@@ -1,0 +1,25 @@
+\chapter{Fazit}
+In der Arbeit sollten die Evaluationsmetriken für die ML-Algorithmen zugänglich gemacht werden.
+Die Auswahl geeigneter Evaluationsmetriken hängt dabei stark von der Lernaufgabe und
+den Zielen ab: Intrinsische Clustering-Indizes (Silhouette, Davies-Bouldin,
+Calinski-Harabasz) messen Kohäsion und Separation, während extrinsische Indizes
+(Purity, ARI, NMI) die Clusterlösung mit bekannten Klassen vergleichen. In der
+Klassifikation sind je nach Datenlage verschiedene Kombinationen von Accuracy,
+Precision, Recall, F1 und AUC sinnvoll; keine einzelne Metrik genügt im
+Allgemeinen. Für die Regression geben MSE/RMSE, MAE und $R^2$ unterschiedliche
+Blickwinkel auf die Fehler. Ein umfassendes Bild entsteht erst, wenn man
+mehrere komplementäre Metriken betrachtet.
+
+Wichtig ist, dass man die Stärken
+und Schwächen jeder Metrik kennt: Manche Metriken belohnen viele kleine Cluster
+(Purity), andere berücksichtigen Zufallseffekte (ARI), und wieder andere
+gewichten Ausreißer unterschiedlich (MSE vs. MAE). Letztlich müssen Metriken im Kontext der Anwendung interpretiert werden.
+
+Die einzelnen Modelle sollten unter verschiedenen Blickwinkeln
+bewertet und die Ergebnisse kritisch hinterfragt werden. Durch die Kombination
+mehrerer Metriken und bestmögliche Verwendung des verfügbaren Expertenwissens
+lässt sich die Qualität von Clustering, Klassifikation und Regression im
+maschinellen Lernen am aussagekräftigsten beurteilen. 
+
+
+
