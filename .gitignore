@@ -64,7 +64,6 @@ htmlcov/
 *.backup
 *.bak
 latexmkrc
-*.pdf
 *.xdv
 *.synctex(busy)
 /miktex.log
