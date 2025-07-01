@@ -1,1 +1,82 @@
 /~$Evaluierung.pptx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+build/
+dist/
+.eggs/
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+# Package caches
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.mypy_cache/
+# IDEs
+.vscode/
+.idea/
+# Jupyter
+.ipynb_checkpoints/
+# Profiling
+.prof
+# Logs
+*.log
+# Unit test reports
+.junit
+# C extensions
+*.dll
+*.dylib
+*.lib
+# Distribution
+*.wheel
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*~
+.#*
+*.backup
+*.bak
+latexmkrc
+*.pdf
+*.xdv
+*.synctex(busy)
+/miktex.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100/
+.Trashes
+.VolumeIcon.icns
+.metadata_never_index
+.savedState/
